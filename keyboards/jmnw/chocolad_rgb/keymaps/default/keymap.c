@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_DOT,
     KC_SLSH,
     KC_LCTL,
-    LT(1,KC_ENT),
+    LT(1,KC_BSPC),
     RGB_HUI,
     RGB_HUD,
     LT(3,KC_SPC),
@@ -202,14 +202,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // }
 
 #ifdef COMBO_ENABLE
-const uint16_t PROGMEM combo_bspc[] = {KC_O, KC_P, COMBO_END};
+//const uint16_t PROGMEM combo_bspc[] = {KC_O, KC_P, COMBO_END};
+const uint16_t PROGMEM combo_bspc[] = {KC_L, KC_SCLN, COMBO_END};
+
 const uint16_t PROGMEM combo_numbak[] = {KC_PSLS, KC_9, COMBO_END};
 const uint16_t PROGMEM combo_tab[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_esc[] = {KC_E, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_del[] = {KC_DOT, KC_SLSH, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-  [COMBO_BSPC] = COMBO(combo_bspc,KC_BSPC),
+  [COMBO_BSPC] = COMBO(combo_bspc,KC_ENT),
   [COMBO_NUMBAK] = COMBO(combo_numbak,KC_BSPC),
   [COMBO_TAB] = COMBO(combo_tab,KC_TAB),
   [COMBO_ESC] = COMBO(combo_esc,KC_ESC),
