@@ -35,44 +35,11 @@ enum combo_events {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
-    KC_Q,
-    KC_W,
-    KC_E,
-    KC_R,
-    KC_T,
-    KC_Y,
-    KC_U,
-    KC_I,
-    KC_O,
-    KC_P,
-    LGUI_T(KC_A),
-    LALT_T(KC_S),
-    LCTL_T(KC_D),
-    LSFT_T(KC_F),
-    KC_G,
-    KC_H,
-    RSFT_T(KC_J),
-    RCTL_T(KC_K),
-    RALT_T(KC_L),
-    RGUI_T(KC_SCLN),
-    KC_Z,
-    KC_X,
-    KC_C,
-    KC_V,
-    KC_B,
-    KC_N,
-    KC_M,
-    KC_COMM,
-    KC_DOT,
-    KC_SLSH,
-    KC_LCTL,
-    LT(1,KC_BSPC),
-    RGB_HUI,
-    KC_ENT,
-    LT(3,KC_SPC),
-    MO(2)
+    KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                                        KC_Y,  KC_U, KC_I, KC_O, KC_P,
+    LGUI_T(KC_A),  LALT_T(KC_S),  LCTL_T(KC_D),LSFT_T(KC_F),  KC_G,         KC_H,  RSFT_T(KC_J),  RCTL_T(KC_K),  RALT_T(KC_L),  RGUI_T(KC_SCLN),
+    KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,                                       KC_N,  KC_M,  KC_COMM,  KC_DOT,  KC_SLSH,
+          KC_LCTL, LT(1,KC_BSPC), RGB_HUI,                                  KC_ENT,  LT(3,KC_SPC),  MO(2)
   ),
-
   [_SYM] = LAYOUT(
     KC_GRV,
     KC_EXLM,
@@ -111,7 +78,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_EQL,
     KC_TRNS
   ),
-
   [_NAV] = LAYOUT(
     RESET,
     KC_TRNS,
@@ -190,20 +156,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-// bool encoder_update_user(uint8_t index, bool clockwise) {
-//     if (index == 0) {
-//         if (clockwise) {
-//             tap_code(KC_VOLU);
-//         } else {
-//             tap_code(KC_VOLD);
-//         }
-//     }
-//     return true;
-// }
 
 #ifdef COMBO_ENABLE
 //const uint16_t PROGMEM combo_bspc[] = {KC_O, KC_P, COMBO_END};
-const uint16_t PROGMEM combo_bspc[] = {KC_L, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM combo_ent[] = {KC_J, KC_H, COMBO_END};
 
 const uint16_t PROGMEM combo_numbak[] = {KC_PSLS, KC_9, COMBO_END};
 const uint16_t PROGMEM combo_tab[] = {KC_Q, KC_W, COMBO_END};
@@ -211,7 +167,7 @@ const uint16_t PROGMEM combo_esc[] = {KC_E, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_del[] = {KC_DOT, KC_SLSH, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-  [COMBO_BSPC] = COMBO(combo_bspc,KC_ENT),
+  [COMBO_BSPC] = COMBO(combo_ent,KC_ENT),
   [COMBO_NUMBAK] = COMBO(combo_numbak,KC_BSPC),
   [COMBO_TAB] = COMBO(combo_tab,KC_TAB),
   [COMBO_ESC] = COMBO(combo_esc,KC_ESC),
