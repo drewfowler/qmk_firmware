@@ -23,7 +23,7 @@ enum layers {
 };
 
 enum combo_events {
-    // COMBO_BSPC,
+    COMBO_BSPC,
     // COMBO_NUMBAK,
     // COMBO_TAB,
     COMBO_ESC
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSPC,
         LCTL_T(KC_DEL), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
         KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_UP, MO(2),
-        KC_LCTL, KC_LGUI, KC_LALT, MO(_NAV), KC_SPC, KC_NO, LT(_NUM_SYM,KC_SPACE), KC_DEL, KC_DEL, KC_LEFT, KC_DOWN, KC_RGHT
+        KC_LCTL, KC_LGUI, KC_LALT, LT(_NUM_SYM,KC_BSPC), KC_SPC, KC_NO, LT(_NAV,KC_SPACE), KC_DEL, KC_DEL, KC_LEFT, KC_DOWN, KC_RGHT
 
     ),
     [_NUM_SYM] = LAYOUT_all(
@@ -60,14 +60,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 #ifdef COMBO_ENABLE
-// const uint16_t PROGMEM combo_bspc[]   = {KC_O, KC_P, COMBO_END};
+const uint16_t PROGMEM combo_bspc[]   = {KC_O, KC_P, COMBO_END};
 // const uint16_t PROGMEM combo_numbak[] = {KC_0, KC_9, COMBO_END};
 // const uint16_t PROGMEM combo_tab[]    = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_esc[]    = {KC_TAB, KC_Q, COMBO_END};
 // const uint16_t PROGMEM combo_del[]    = {KC_MINS, KC_EQL, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-    // [COMBO_BSPC] = COMBO(combo_bspc, KC_BSPC),
+    [COMBO_BSPC] = COMBO(combo_bspc, KC_BSPC),
     // [COMBO_NUMBAK] = COMBO(combo_numbak, KC_BSPC),
     // [COMBO_TAB] = COMBO(combo_tab, KC_TAB),
     [COMBO_ESC] = COMBO(combo_esc, KC_ESC) 
