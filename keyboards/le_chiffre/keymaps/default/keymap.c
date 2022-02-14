@@ -73,7 +73,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return true;
 }
 
-#ifdef COMBO_ENABLE
+// #ifdef COMBO_ENABLE
 const uint16_t PROGMEM combo_bspc[] = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM combo_numbak[] = {KC_0, KC_9, COMBO_END};
 const uint16_t PROGMEM combo_tab[] = {KC_Q, KC_W, COMBO_END};
@@ -88,7 +88,7 @@ combo_t key_combos[COMBO_COUNT] = {
   [COMBO_DEL] = COMBO(combo_del,KC_DEL),
 
 };
-#endif
+// #endif
 
 #ifdef OLED_ENABLE  //Special thanks to Sickbabies for this great OLED widget!
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {

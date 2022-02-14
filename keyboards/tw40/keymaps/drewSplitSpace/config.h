@@ -1,4 +1,4 @@
-/* Copyright 2020 tominabox1
+/* Copyright 2020
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,8 +15,5 @@
  */
 #pragma once
 
-#define IGNORE_MOD_TAP_INTERRUPT  // helps with homerow mods
-#define TAPPING_TERM 200          // ms time to activate mods
-
-#define COMBO_COUNT 5
+#define COMBO_COUNT 1
 #define COMBO_TERM 30
