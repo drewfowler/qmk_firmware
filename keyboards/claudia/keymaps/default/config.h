@@ -1,4 +1,4 @@
-/* Copyright 2020 tominabox1
+/* Copyright 2021 OTTIMO
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 #pragma once
 
 #define IGNORE_MOD_TAP_INTERRUPT  // helps with homerow mods
-#define TAPPING_TERM 500          // ms time to activate mods
+#define TAPPING_TERM 200
 
 #define COMBO_COUNT 5
-#define COMBO_TERM 30
+#define COMBO_TERM 40
