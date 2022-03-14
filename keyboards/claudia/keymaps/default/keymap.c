@@ -27,8 +27,12 @@ enum combo_events {
   COMBO_TAB,
   COMBO_ESC,
   COMBO_DEL,
+  COMBO_CPY,
+  COMBO_PST,
 };
 
+#define KC_COPY LCTL(KC_C)
+#define KC_PASTE LCTL(KC_V)
 #define KC_NAV_SPC LT(_NAV, KC_SPC)
 #define KC_NUM_ENT LT(_NAV, KC_ENT)
 
@@ -71,6 +75,8 @@ const uint16_t PROGMEM combo_numbak[] = {KC_0, KC_9, COMBO_END};
 const uint16_t PROGMEM combo_tab[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_esc[] = {KC_E, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_del[] = {KC_MINS, KC_EQL, COMBO_END};
+const uint16_t PROGMEM combo_cpy[] = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM combo_pst[] = {KC_MINS, KC_EQL, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [COMBO_BSPC] = COMBO(combo_bspc,KC_BSPC),
@@ -78,6 +84,8 @@ combo_t key_combos[COMBO_COUNT] = {
   [COMBO_TAB] = COMBO(combo_tab,KC_TAB),
   [COMBO_ESC] = COMBO(combo_esc,KC_ESC),
   [COMBO_DEL] = COMBO(combo_del,KC_DEL),
+  [COMBO_CPY] = COMBO(combo_cpy,KC_COPY),
+  [COMBO_PST] = COMBO(combo_pst,KC_PASTE),
 
 };
 // #endif
