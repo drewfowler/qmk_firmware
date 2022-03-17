@@ -30,6 +30,7 @@ enum combo_events {
   COMBO_CPY,
   COMBO_PST,
   COMBO_UND,
+  COMBO_ENT,
 };
 
 #define KC_COPY LCTL(KC_C)
@@ -52,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,            KC_Y,   KC_U,    KC_I,   KC_O,     KC_P,
    KC_GA,  KC_AS,  KC_CD,  KC_SF,   KC_G,            KC_H,  KC_SJ,   KC_CK,  KC_AL, KC_GSCLN,
     KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,            KC_N,   KC_M, KC_COMM, KC_DOT,  KC_SLSH,
-                     KC_LCTL, KC_NUM_ENT,            KC_NAV_SPC, RSFT_T(KC_DEL)
+                     KC_LCTL, MO(_NUM_SYM),            KC_NAV_SPC, RSFT_T(KC_DEL)
   ),
 
   [_NUM_SYM] = LAYOUT(
@@ -72,24 +73,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 // #ifdef COMBO_ENABLE
-const uint16_t PROGMEM combo_bspc[] = {KC_O, KC_P, COMBO_END};
+const uint16_t PROGMEM combo_bspc[]   = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM combo_numbak[] = {KC_0, KC_9, COMBO_END};
-const uint16_t PROGMEM combo_tab[] = {KC_Q, KC_W, COMBO_END};
-const uint16_t PROGMEM combo_esc[] = {KC_E, KC_W, COMBO_END};
-const uint16_t PROGMEM combo_del[] = {KC_MINS, KC_EQL, COMBO_END};
-const uint16_t PROGMEM combo_cpy[] = {KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM combo_pst[] = {KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM combo_und[] = {KC_Z, KC_X, COMBO_END};
+const uint16_t PROGMEM combo_tab[]    = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM combo_esc[]    = {KC_E, KC_W, COMBO_END};
+const uint16_t PROGMEM combo_del[]    = {KC_MINS, KC_EQL, COMBO_END};
+const uint16_t PROGMEM combo_cpy[]    = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM combo_pst[]    = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM combo_und[]    = {KC_Z, KC_X, COMBO_END};
+const uint16_t PROGMEM combo_ent[]    = {KC_AL, KC_GSCLN, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-  [COMBO_BSPC] = COMBO(combo_bspc,KC_BSPC),
+  [COMBO_BSPC] =   COMBO(combo_bspc,KC_BSPC),
   [COMBO_NUMBAK] = COMBO(combo_numbak,KC_BSPC),
-  [COMBO_TAB] = COMBO(combo_tab,KC_TAB),
-  [COMBO_ESC] = COMBO(combo_esc,KC_ESC),
-  [COMBO_DEL] = COMBO(combo_del,KC_DEL),
-  [COMBO_CPY] = COMBO(combo_cpy,KC_COPY),
-  [COMBO_PST] = COMBO(combo_pst,KC_PASTE),
-  [COMBO_UND] = COMBO(combo_und,KC_UNDO),
+  [COMBO_TAB] =    COMBO(combo_tab,KC_TAB),
+  [COMBO_ESC] =    COMBO(combo_esc,KC_ESC),
+  [COMBO_DEL] =    COMBO(combo_del,KC_DEL),
+  [COMBO_CPY] =    COMBO(combo_cpy,KC_COPY),
+  [COMBO_PST] =    COMBO(combo_pst,KC_PASTE),
+  [COMBO_UND] =    COMBO(combo_und,KC_UNDO),
+  [COMBO_ENT] =    COMBO(combo_ent,KC_ENT),
 
 };
 // #endif
