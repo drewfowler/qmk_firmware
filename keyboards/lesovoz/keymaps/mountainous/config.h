@@ -20,4 +20,4 @@
 #define TAPPING_TERM 200
 
 #define COMBO_COUNT 9
-#define COMBO_TERM 40
+#define COMBO_TERM 60
