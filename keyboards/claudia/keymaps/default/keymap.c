@@ -28,19 +28,20 @@ enum combo_events {
 
 /* Special Keys */
 #define MC_GZ LGUI_T(KC_Z)
-#define MC_AS LALT_T(KC_S)
+#define MC_AS LALT_T(KC_A)
 #define MC_CD LCTL_T(KC_D)
 #define MC_SF LSFT_T(KC_F)
 #define MC_SJ RSFT_T(KC_J)
 #define MC_CK RCTL_T(KC_K)
 #define MC_AL RALT_T(KC_L)
-#define MC_GSCLN RGUI_T(KC_SCLN)
+#define MC_GSCLN RALT_T(KC_SCLN)
+#define MC_QUOT RGUI_T(KC_QUOT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
     KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,            KC_Y,   KC_U,    KC_I,   KC_O,     KC_P,
-    KC_A,  MC_AS,  MC_CD,  MC_SF,   KC_G,            KC_H,  MC_SJ,   MC_CK,  MC_AL, MC_GSCLN,
-    MC_GZ,   KC_X,   KC_C,   KC_V,   KC_B,            KC_N,   KC_M, KC_COMM, KC_DOT,  KC_QUOT,
+    MC_AS,  KC_S,  MC_CD,  MC_SF,   KC_G,            KC_H,  MC_SJ,   MC_CK,  KC_L, MC_GSCLN,
+    MC_GZ,   KC_X,   KC_C,   KC_V,   KC_B,            KC_N,   KC_M, KC_COMM, KC_DOT,  MC_QUOT,
                      KC_LCTL, KC_NUM_ENT,            KC_NAV_SPC, RSFT_T(KC_DEL)
   ),
 
@@ -53,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAV] = LAYOUT(
       RESET,  _______,  AG_NORM,  AG_SWAP,  DEBUG,           KC_GRV,  KC_PGDN,    KC_UP,  KC_PGUP,  KC_SCLN,
-    RGB_TOG,  KC_F13,  RGB_SAI,  RGB_VAI,  KC_VOLU,           KC_HOME,  KC_LEFT,  KC_DOWN,  KC_RGHT,   KC_END,
+    KC_CAPS,  KC_F13,  KC_LCTL,  RGB_VAI,  KC_VOLU,           KC_HOME,  KC_LEFT,  KC_DOWN,  KC_RGHT,   KC_END,
     RGB_MOD,  RGB_HUD,  RGB_SAD,  RGB_VAD,  KC_VOLD,           KC_MINS,    KC_RO,  KC_COMM,   KC_GRV,  KC_BSLS,
                                   KC_TRNS,KC_TRNS,           KC_TRNS,  MO(_FUNC)
   ), 
