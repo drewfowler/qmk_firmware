@@ -23,12 +23,13 @@ enum combo_events {
 #define KC_COPY LCTL(KC_C)
 #define KC_PASTE LCTL(KC_V)
 #define KC_UNDO LCTL(KC_Z)
+#define KC_CUT LCTL(KC_X)
 #define KC_NAV_SPC LT(_NAV, KC_SPC)
 #define KC_NUM_ENT LT(_NUM_SYM, KC_ENT)
 
 /* Special Keys */
 #define MC_GZ LGUI_T(KC_Z)
-#define MC_AS LALT_T(KC_A)
+#define MC_XS LALT_T(KC_X)
 #define MC_CD LCTL_T(KC_D)
 #define MC_SF LSFT_T(KC_F)
 #define MC_SJ RSFT_T(KC_J)
@@ -40,8 +41,8 @@ enum combo_events {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
     KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,            KC_Y,   KC_U,    KC_I,   KC_O,     KC_P,
-    MC_AS,  KC_S,  MC_CD,  MC_SF,   KC_G,            KC_H,  MC_SJ,   MC_CK,  KC_L, MC_GSCLN,
-    MC_GZ,   KC_X,   KC_C,   KC_V,   KC_B,            KC_N,   KC_M, KC_COMM, KC_DOT,  MC_QUOT,
+    KC_A,  KC_S,  MC_CD,  MC_SF,   KC_G,            KC_H,  MC_SJ,   MC_CK,  KC_L, MC_GSCLN,
+    MC_GZ,   MC_XS,   KC_C,   KC_V,   KC_B,            KC_N,   KC_M, KC_COMM, KC_DOT,  MC_QUOT,
                      KC_LCTL, KC_NUM_ENT,            KC_NAV_SPC, RSFT_T(KC_DEL)
   ),
 
@@ -75,9 +76,9 @@ const uint16_t PROGMEM combo_numbak[] = {KC_0, KC_9, COMBO_END};
 const uint16_t PROGMEM combo_tab[]    = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_esc[]    = {KC_E, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_del[]    = {KC_MINS, KC_EQL, COMBO_END};
-const uint16_t PROGMEM combo_cpy[]    = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM combo_cpy[]    = {MC_XS, KC_C, COMBO_END};
 const uint16_t PROGMEM combo_pst[]    = {KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM combo_und[]    = {MC_GZ, KC_X, COMBO_END};
+const uint16_t PROGMEM combo_und[]    = {MC_GZ, MC_XS, COMBO_END};
 const uint16_t PROGMEM combo_ent[]    = {MC_AL, MC_GSCLN, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
@@ -88,7 +89,7 @@ combo_t key_combos[COMBO_COUNT] = {
   [COMBO_DEL] =    COMBO(combo_del,KC_DEL),
   [COMBO_CPY] =    COMBO(combo_cpy,KC_COPY),
   [COMBO_PST] =    COMBO(combo_pst,KC_PASTE),
-  [COMBO_UND] =    COMBO(combo_und,KC_UNDO),
+  [COMBO_UND] =    COMBO(combo_und,KC_CUT),
   [COMBO_ENT] =    COMBO(combo_ent,KC_ENT),
 };
 // #endif
