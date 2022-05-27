@@ -18,12 +18,14 @@ enum combo_events {
   COMBO_PST,
   COMBO_UND,
   COMBO_ENT,
+  COMBO_SAVE,
 };
 
 #define KC_COPY LCTL(KC_C)
 #define KC_PASTE LCTL(KC_V)
 #define KC_UNDO LCTL(KC_Z)
 #define KC_CUT LCTL(KC_X)
+#define KC_SAVE LCTL(KC_S)
 #define KC_NAV_SPC LT(_NAV, KC_SPC)
 #define KC_NUM_ENT LT(_NUM_SYM, KC_ENT)
 
@@ -80,6 +82,8 @@ const uint16_t PROGMEM combo_cpy[]    = {MC_XS, KC_C, COMBO_END};
 const uint16_t PROGMEM combo_pst[]    = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM combo_und[]    = {MC_GZ, MC_XS, COMBO_END};
 const uint16_t PROGMEM combo_ent[]    = {MC_AL, MC_GSCLN, COMBO_END};
+const uint16_t PROGMEM combo_save[]    = {KC_S, MC_CD, COMBO_END};
+
 
 combo_t key_combos[COMBO_COUNT] = {
   [COMBO_BSPC] =   COMBO(combo_bspc,KC_BSPC),
@@ -91,5 +95,7 @@ combo_t key_combos[COMBO_COUNT] = {
   [COMBO_PST] =    COMBO(combo_pst,KC_PASTE),
   [COMBO_UND] =    COMBO(combo_und,KC_CUT),
   [COMBO_ENT] =    COMBO(combo_ent,KC_ENT),
+  [COMBO_SAVE] =    COMBO(combo_save,KC_SAVE),
+
 };
 // #endif
