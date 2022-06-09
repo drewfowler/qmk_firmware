@@ -17,7 +17,7 @@
 
 #define IGNORE_MOD_TAP_INTERRUPT  // helps with homerow mods
 #define PERMISSIVE_HOLD
-#define TAPPING_TERM 100
+// #define TAPPING_TERM 100
 
 #define COMBO_COUNT 9
 #define COMBO_TERM 60
